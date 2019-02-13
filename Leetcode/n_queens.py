@@ -22,6 +22,9 @@
 # ]
 # Explanation: There exist two distinct solutions to the 4-queens puzzle as shown above.
 
+
+# COULD USE A LOT OF OPTIMIZATION
+
 import pprint
 pp = pprint.PrettyPrinter(indent=4)
 
