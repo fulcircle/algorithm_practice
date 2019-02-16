@@ -16,6 +16,9 @@ class SubsetSumRecursive:
 
     def subset_sum(self, curr_nums):
 
+        if sum(curr_nums) == self.sum:
+            return True
+
         for idx, value in enumerate(curr_nums):
             copy_curr_nums = curr_nums.copy()
             del copy_curr_nums[idx]
@@ -41,6 +44,9 @@ class TestSubsetSum(unittest.TestCase):
 
     def test4(self):
         self.assertEqual(SubsetSumRecursive([2, 2, 2, 4, 56, 756], 6).run(), True)
+
+    def test5(self):
+        self.assertEqual(SubsetSumRecursive([2, 2, 2], 6).run(), True)
 
 
 if __name__ == '__main__':
