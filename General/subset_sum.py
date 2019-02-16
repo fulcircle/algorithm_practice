@@ -16,21 +16,16 @@ class SubsetSumRecursive:
 
     def subset_sum(self, curr_nums):
 
-        found = False
         for idx, value in enumerate(curr_nums):
             copy_curr_nums = curr_nums.copy()
             del copy_curr_nums[idx]
             if len(copy_curr_nums) == 0:
                 continue
-            if sum(copy_curr_nums) == self.sum:
-                found = True
-                break
-            else:
-                found = self.subset_sum(copy_curr_nums)
-                if found:
-                    break
 
-        return found
+            if sum(copy_curr_nums) == self.sum or self.subset_sum(copy_curr_nums):
+                return True
+
+        return False
 
 
 class TestSubsetSum(unittest.TestCase):
